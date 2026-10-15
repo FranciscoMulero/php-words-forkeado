@@ -1,0 +1,1 @@
+ "Ideas: buscador, filtro por categoría, más palabras."

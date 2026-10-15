@@ -91,3 +91,7 @@ No requiere Node.js, servidores web locales ni dependencias de npm:
 2. Haz **doble clic en `index.html`** para abrirlo en cualquier navegador web moderno (Chrome, Edge, Firefox, Safari).
 
 Requiere un navegador moderno
+
+
+
+prueba
