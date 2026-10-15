@@ -87,5 +87,7 @@ El proyecto sigue una arquitectura de extensión desacoplada:
 ## 🚀 Cómo Ejecutar
 
 No requiere Node.js, servidores web locales ni dependencias de npm:
-1. Navega hasta la carpeta `php-words/`.
+1. Tambien puedes usar live server desde un IDE como VSCode.`.
 2. Haz **doble clic en `index.html`** para abrirlo en cualquier navegador web moderno (Chrome, Edge, Firefox, Safari).
+
+Requiere un navegador moderno
