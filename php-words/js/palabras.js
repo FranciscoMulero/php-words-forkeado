@@ -36,5 +36,8 @@ const PALABRAS = [
   { palabra: "include", categoria: "otros", descripcion: "Incluye y ejecuta el archivo especificado, emitiendo únicamente una advertencia en caso de fallar." },
   { palabra: "namespace", categoria: "otros", descripcion: "Declara un espacio de nombres para aislar y organizar clases, funciones y constantes en paquetes." },
   { palabra: "use", categoria: "otros", descripcion: "Importa un espacio de nombres, clase o función en el archivo actual permitiendo alias opcionales." },
-  { palabra: "instanceof", categoria: "otros", descripcion: "Operador de tipo que verifica si un objeto determinado pertenece a una clase concreta o interfaz." }
+  { palabra: "instanceof", categoria: "otros", descripcion: "Operador de tipo que verifica si un objeto determinado pertenece a una clase concreta o interfaz." },
+  { palabra: "abstract", categoria: "clases", descripcion: "Declara clases o métodos abstractos cuya implementación debe realizarse en clases derivadas." },
+  { palabra: "static", categoria: "clases", descripcion: "Declara propiedades y métodos estáticos accesibles directamente desde la clase sin crear una instancia." },
+  { palabra: "const", categoria: "otros", descripcion: "Define constantes en tiempo de compilación cuyo valor no puede ser modificado durante la ejecución." }
 ];
