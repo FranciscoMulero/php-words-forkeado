@@ -1,0 +1,449 @@
+/* ==========================================================================
+   PHP Words - Design System & Styles
+   Aesthetics: Apple Design principles + Emil Kowalski Design Engineering
+   ========================================================================== */
+
+:root {
+  /* Color Palette */
+  --bg-primary: #0a0e17;
+  --bg-secondary: #111827;
+  --bg-card: rgba(17, 24, 39, 0.65);
+  --bg-card-hover: rgba(24, 34, 53, 0.8);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-highlight: rgba(255, 255, 255, 0.18);
+  --border-top-shine: rgba(255, 255, 255, 0.14);
+
+  /* Typography Colors */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-accent: #818cf8;
+
+  /* Semantic Category Tokens */
+  --cat-control-text: #fbbf24;
+  --cat-control-bg: rgba(245, 158, 11, 0.12);
+  --cat-control-border: rgba(245, 158, 11, 0.28);
+
+  --cat-funciones-text: #34d399;
+  --cat-funciones-bg: rgba(16, 185, 129, 0.12);
+  --cat-funciones-border: rgba(16, 185, 129, 0.28);
+
+  --cat-clases-text: #a5b4fc;
+  --cat-clases-bg: rgba(99, 102, 241, 0.14);
+  --cat-clases-border: rgba(129, 140, 248, 0.32);
+
+  --cat-excepciones-text: #fb7185;
+  --cat-excepciones-bg: rgba(244, 63, 94, 0.12);
+  --cat-excepciones-border: rgba(244, 63, 94, 0.28);
+
+  --cat-otros-text: #38bdf8;
+  --cat-otros-bg: rgba(56, 189, 248, 0.12);
+  --cat-otros-border: rgba(56, 189, 248, 0.28);
+
+  /* Font Families */
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", system-ui, sans-serif;
+  --font-mono: "SF Mono", "JetBrains Mono", "Cascadia Code", "Fira Code", Menlo, Consolas, monospace;
+
+  /* Shadows */
+  --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+  --shadow-card-hover: 0 16px 32px -6px rgba(0, 0, 0, 0.55), 0 0 0 1px var(--border-highlight);
+  --shadow-chip: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Base Reset & Foundations */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--bg-primary);
+  background-image: 
+    radial-gradient(ellipse 90% 60% at 50% -15%, rgba(99, 102, 241, 0.18), transparent 70%),
+    radial-gradient(circle 400px at 80% 20%, rgba(139, 92, 246, 0.08), transparent 70%);
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+}
+
+/* App Layout */
+.app-layout {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Header & Typography Hierarchy */
+.app-header {
+  text-align: center;
+  margin-bottom: 2.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.version-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border-subtle);
+  border-top-color: var(--border-top-shine);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-accent);
+  letter-spacing: 0.03em;
+  margin-bottom: 0.85rem;
+  box-shadow: var(--shadow-chip);
+}
+
+.version-prefix {
+  opacity: 0.7;
+  margin-right: 0.15rem;
+}
+
+#titulo {
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  font-weight: 750;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 0.65rem;
+  background: linear-gradient(180deg, #ffffff 40%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#subtitulo {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: var(--text-secondary);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  max-width: 540px;
+}
+
+/* Main Container */
+.app-main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Controles Container (Prepared for future extension scripts) */
+#controles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.75rem;
+  min-height: 0;
+}
+
+#controles:not(:empty) {
+  padding: 1.15rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  margin-bottom: 2rem;
+}
+
+/* Stylings for potential interactive elements injected into #controles */
+#controles input[type="text"],
+#controles input[type="search"],
+#controles select {
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  outline: none;
+  transition: border-color 150ms ease-out, background-color 150ms ease-out, box-shadow 150ms ease-out;
+}
+
+#controles input[type="text"]:focus,
+#controles input[type="search"]:focus,
+#controles select:focus {
+  border-color: var(--text-accent);
+  background: rgba(255, 255, 255, 0.09);
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.2);
+}
+
+#controles button {
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-subtle);
+  border-top-color: var(--border-top-shine);
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  transition: transform 100ms ease-out, background-color 150ms ease-out, border-color 150ms ease-out;
+}
+
+#controles button:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--border-highlight);
+}
+
+#controles button:active {
+  transform: scale(0.97);
+}
+
+/* Status Bar & Counter */
+.status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  padding: 0 0.25rem;
+}
+
+#contador {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 0.01em;
+}
+
+#contador::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--cat-funciones-text);
+  box-shadow: 0 0 8px var(--cat-funciones-text);
+}
+
+/* Words Grid List */
+#lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 1.15rem;
+  list-style: none;
+}
+
+/* Word Card */
+.palabra-card {
+  position: relative;
+  background: var(--bg-card);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border: 1px solid var(--border-subtle);
+  border-top-color: var(--border-top-shine);
+  border-radius: 14px;
+  padding: 1.25rem 1.35rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  transition: transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 160ms ease-out,
+              box-shadow 160ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              background-color 160ms ease-out;
+  cursor: default;
+}
+
+.palabra-card:hover {
+  transform: translateY(-2px);
+  background-color: var(--bg-card-hover);
+  border-color: var(--border-highlight);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.palabra-card:active {
+  transform: scale(0.985);
+  transition: transform 80ms ease-out;
+}
+
+/* Card Header: Word Name & Category Badge */
+.palabra-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.palabra-nombre {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #f1f5f9;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.18rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid transparent;
+}
+
+.badge-control {
+  background: var(--cat-control-bg);
+  color: var(--cat-control-text);
+  border-color: var(--cat-control-border);
+}
+
+.badge-funciones {
+  background: var(--cat-funciones-bg);
+  color: var(--cat-funciones-text);
+  border-color: var(--cat-funciones-border);
+}
+
+.badge-clases {
+  background: var(--cat-clases-bg);
+  color: var(--cat-clases-text);
+  border-color: var(--cat-clases-border);
+}
+
+.badge-excepciones {
+  background: var(--cat-excepciones-bg);
+  color: var(--cat-excepciones-text);
+  border-color: var(--cat-excepciones-border);
+}
+
+.badge-otros {
+  background: var(--cat-otros-bg);
+  color: var(--cat-otros-text);
+  border-color: var(--cat-otros-border);
+}
+
+/* Card Description */
+.palabra-descripcion {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  letter-spacing: -0.005em;
+  font-weight: 400;
+}
+
+/* Empty State */
+.item-vacio {
+  grid-column: 1 / -1;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 3.5rem 1rem;
+}
+
+.mensaje-vacio {
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px dashed var(--border-subtle);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  max-width: 420px;
+  width: 100%;
+}
+
+.icono-vacio {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.75rem;
+  opacity: 0.8;
+}
+
+.titulo-vacio {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.subtitulo-vacio {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Footer */
+.app-footer {
+  margin-top: 3.5rem;
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.footer-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Accessibility: Reduced Motion (Apple Design Guideline §14) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .palabra-card:hover {
+    transform: none;
+  }
+
+  .palabra-card:active {
+    transform: none;
+  }
+
+  #controles button:active {
+    transform: none;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .app-layout {
+    padding: 2rem 1rem 3rem;
+  }
+
+  #lista {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .palabra-card {
+    padding: 1.1rem 1.15rem;
+  }
+}
