@@ -97,3 +97,7 @@ Requiere un navegador moderno
 
 
 prueba
+
+
+### Mejora pequeña
+Esta mejora es pequeña pero importante.
