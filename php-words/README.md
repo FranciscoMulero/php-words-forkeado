@@ -4,7 +4,7 @@ Aplicación interactiva y ligera para consultar las palabras reservadas del leng
 
 ---
 
-## 📁 Estructura del Proyecto
+## 📁 Estructura del Proyecto, esta edicion es una prueba
 
 ```text
 php-words/
